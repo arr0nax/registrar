@@ -106,6 +106,44 @@
             $this->assertEquals([$test_student1, $test_student2], $result);
         }
 
+        function testDelete()
+        {
+            //Arrange
+            $name = "Amanda Bynes's Robot History";
+            $id = 2;
+            $test_course = new Course($name, $id);
+            $name2 = "Bong Toss: Applied Physiiicks";
+            $id2 = 3;
+            $test_course2 = new Course($name2, $id2);
+
+            //Act
+            $test_course->save();
+            $test_course2->save();
+            $test_course->delete();
+            $result = Course::getAll();
+
+            //Assert
+            $this->assertEquals($result, [$test_course2]);
+        }
+
+        function testUpdate()
+        {
+            //Arrange
+            $name = "Amanda Bynes's Robot History";
+            $id = 2;
+            $test_course = new Course($name, $id);
+            $name2 = "Bong Toss: Applied Physiiicks";
+
+            //Act
+            $test_course->save();
+            $test_course->update($name2);
+            $test_course->setName($name2);
+            $result = Course::getAll();
+
+            //Assert
+            $this->assertEquals($result, [$test_course]);
+        }
+
     }
 
     ?>

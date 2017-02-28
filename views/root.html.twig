@@ -5,6 +5,34 @@
         <title></title>
     </head>
     <body>
-        {{result}}
+        <h2>Current Students</h2>
+        <ul>
+            {%if students is not empty%}
+            {% for student in students %}
+                <a href="/student/{{student.getId}}"><li>{{student.getName}}</li></a>
+            {%endfor%}
+            {% endif %}
+        </ul>
+        <h2>Add Student</h2>
+        <form class="" action="/addstudent" method="post">
+            <label for="name">Name:</label>
+            <input type="text" name="name" value="">
+            <button type="submit" name="button">Add Student</button>
+        </form>
+        <h2>Current Courses</h2>
+        <ul>
+            {%if courses is not empty%}
+
+                {% for course in courses %}
+                    <a href="/course/{{course.getId}}"><li>{{course.getName}}</li></a>
+                {%endfor%}
+            {%endif%}
+        </ul>
+        <h2>Add Course</h2>
+        <form class="" action="/addcourse" method="post">
+            <label for="name">Name:</label>
+            <input type="text" name="name" value="">
+            <button type="submit" name="button">Add Course</button>
+        </form>
     </body>
 </html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <h1>{{course.getName}}</h1>
+        <h2>Current Students</h2>
+        <ul>
+            {% for student in course.getStudents %}
+                <li>{{student.getName}}</li>
+            {%endfor%}
+        </ul>
+        <h2>Update Name</h2>
+        <form class="" action="/course/{{course.getId}}/edit" method="post">
+            <input type="hidden" name="_method" value="patch">
+            <label for="name">Name: </label>
+            <input type="text" name="name" value="{{course.getName}}">
+        <h2>Update students</h2>
+            {% for student in students %}
+                <input type="checkbox" name='{{student.getId}}' value="{{student.getId}}">
+                <label for="{{student.getName}}">{{student.getName}}</label>
+            {% endfor %}
+            <button type="submit" name="button">DOIT</button>
+        </form>
+    </body>
+</html>
