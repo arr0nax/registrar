@@ -1,0 +1,33 @@
+/*general styles*/
+.index-body {
+    background-image: url("/../img/heronimus.jpg");
+}
+.jumbotron {
+    text-align: center;
+}
+
+.container-fluid {
+    background-color: #A9BCD0;
+    background:rgba(255,255,255,0.5);
+}
+
+/*student.html */
+
+.student-body {
+    background-image: url("/../img/student-backkground.jpg");
+}
+
+/*courses.html*/
+
+.course-body {
+    background-image: url("/../img/course-background.jpg");
+}
+
+.fire {
+    float: left;
+    position: absolute;
+    width: 100%;
+    background-image: url("/../img/fire.gif-c200");
+    height: 200px;
+    margin-top: 50vh;
+}

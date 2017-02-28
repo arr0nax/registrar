@@ -2,37 +2,47 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title></title>
+        <title>Amanda Bynes Technical Institute of Robotics</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="/css/styles.css" type="text/css">
     </head>
-    <body>
-        <h2>Current Students</h2>
-        <ul>
-            {%if students is not empty%}
-            {% for student in students %}
-                <a href="/student/{{student.getId}}"><li>{{student.getName}}</li></a>
-            {%endfor%}
-            {% endif %}
-        </ul>
-        <h2>Add Student</h2>
-        <form class="" action="/addstudent" method="post">
-            <label for="name">Name:</label>
-            <input type="text" name="name" value="">
-            <button type="submit" name="button">Add Student</button>
-        </form>
-        <h2>Current Courses</h2>
-        <ul>
-            {%if courses is not empty%}
-
-                {% for course in courses %}
-                    <a href="/course/{{course.getId}}"><li>{{course.getName}}</li></a>
+    <body class="index-body">
+        <div class="container-fluid">
+            <div class="jumbotron">
+                <h1>Amanda Bynes Technical Institute of Robotics</h1>
+            </div>
+            <h2>Current Students</h2>
+            <ul>
+                {%if students is not empty%}
+                {% for student in students %}
+                    <a href="/student/{{student.getId}}"><li>{{student.getName}}</li></a>
                 {%endfor%}
-            {%endif%}
-        </ul>
-        <h2>Add Course</h2>
-        <form class="" action="/addcourse" method="post">
-            <label for="name">Name:</label>
-            <input type="text" name="name" value="">
-            <button type="submit" name="button">Add Course</button>
-        </form>
+                {% endif %}
+            </ul>
+            <h2>Add Student</h2>
+            <form class="" action="/addstudent" method="post">
+                <label for="name">Name:</label>
+                <input type="text" name="name" value="">
+                <button class="btn" type="submit" name="button">Add Student</button>
+            </form>
+            <h2>Current Courses</h2>
+            <ul>
+                {%if courses is not empty%}
+
+                    {% for course in courses %}
+                        <a href="/course/{{course.getId}}"><li>{{course.getName}}</li></a>
+                    {%endfor%}
+                {%endif%}
+            </ul>
+            <h2>Add Course</h2>
+            <form class="" action="/addcourse" method="post">
+                <label for="name">Name:</label>
+                <input type="text" name="name" value="">
+                <button class="btn" type="submit" name="button">Add Course</button>
+            </form>
+        </div>
+        <div class="fire">
+
+        </div>
     </body>
 </html>
